@@ -16,32 +16,30 @@ const logoImage = document.getElementById("logoImage");
 const weatherStatus = document.getElementById("weatherStatus");
 
 const getData = async (event) => {
-  event.preventDefault();
-  if (!inputBox.value) {
-    alert("Please Enter The City Name: ");
-    return;
-  }
+	event.preventDefault();
+	if (!inputBox.value) {
+		alert("Please Enter The City Name: ");
+		return;
+	}
 
-  //
-  const city = inputBox.value;
+	//
+	const city = inputBox.value;
+	const api = "3f74759b39204d82847110059231102";
+	// Fetch Details
 
-  // Fetch Details
+	const fetchData = await fetch(`http://api.weatherapi.com/v1/current.json?key=${api}&q=${city}`);
 
-  const fetchData = await fetch(
-    `http://api.weatherapi.com/v1/current.json?key=1&q=${city}`
-  );
+	const orgData = await fetchData.json();
+	data = orgData;
+	console.log(data);
 
-  const orgData = await fetchData.json();
-  data = orgData;
-  console.log(data);
-
-  // Displaying the data in HTML
-  countryName.innerHTML = data.location.country;
-  stateName.innerHTML = data.location.region;
-  cityName.innerHTML = data.location.name;
-  humidity.innerHTML = data.current.humidity;
-  windSpeed.innerHTML = data.current.wind_kph;
-  temprature.innerHTML = data.current.temp_c;
-  logoImage.src = data.current.condition.icon;
-  weatherStatus.innerHTML = data.current.condition.text;
+	// Displaying the data in HTML
+	countryName.innerHTML = data.location.country;
+	stateName.innerHTML = data.location.region;
+	cityName.innerHTML = data.location.name;
+	humidity.innerHTML = data.current.humidity;
+	windSpeed.innerHTML = data.current.wind_kph;
+	temprature.innerHTML = data.current.temp_c;
+	logoImage.src = data.current.condition.icon;
+	weatherStatus.innerHTML = data.current.condition.text;
 };
