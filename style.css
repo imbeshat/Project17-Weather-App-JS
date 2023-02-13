@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap");
+
 /* css reset */
 * {
 	margin: 0;
@@ -7,16 +9,29 @@
 }
 
 body {
+	background: url("https://images.unsplash.com/photo-1477346611705-65d1883cee1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80");
 	height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	font-family: "Comic Neue", cursive;
+	font-size: 19px;
 }
 
+form {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding: 0 10px;
+}
 /* designing the weather app container */
 .container {
-	width: 600px;
-	border: 2px solid black;
+	background: #000000d0;
+	color: #ffffff;
+	border-radius: 30px;
+	width: 100%;
+	max-width: 480px;
+	margin: 10px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -26,21 +41,36 @@ body {
 }
 
 /* designing the search area */
-.searchData {
-	border: 1px solid black;
-}
-
 .searchData input {
-	border: transparent;
-	padding: 5px;
+	width: 85%;
+	padding: 8px 10px;
+	border-radius: 19px;
+	border: none;
+	background: #7c7c7c2b;
+	font-size: 20px;
+	font-family: inherit;
+	color: #ffffff;
 }
 
 .searchData button {
-	border: transparent;
-	padding: 5px 15px;
 	cursor: pointer;
+	border: none;
+	border-radius: 50%;
+	height: 40px;
+	width: 40px;
+	background: #7c7c7c2b;
+	color: #ffffff;
+	transition: 0.5s ease-in-out;
 }
 
+.searchData button:hover {
+	background: #7c7c7c6b;
+}
+
+.searchData button:active {
+	transform: translateY(4px);
+	transition: 0.1s ease-in-out;
+}
 /* designing the city weather data */
 .cityWeatherData {
 	display: flex;
