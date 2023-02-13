@@ -24,6 +24,7 @@ form {
 	justify-content: space-between;
 	padding: 0 10px;
 }
+
 /* designing the weather app container */
 .container {
 	background: #000000d0;
@@ -38,6 +39,9 @@ form {
 	justify-content: center;
 	gap: 25px;
 	padding: 15px;
+	background: #36363647;
+	box-shadow: 0 4px 30px #0000001a;
+	backdrop-filter: blur(8.3px);
 }
 
 /* designing the search area */
