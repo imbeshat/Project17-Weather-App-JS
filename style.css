@@ -103,7 +103,7 @@ form {
 	color: #ffffff;
 	display: flex;
 	column-gap: 40px;
-	flex-wrap: wrap;
+	/* flex-wrap: wrap; */
 	border-radius: 30px;
 	box-shadow: 0 4px 30px #0000001a;
 	backdrop-filter: blur(6.3px);
@@ -129,7 +129,6 @@ p.forecastPara {
 	justify-content: flex-start;
 	align-items: flex-start;
 	max-width: 200px;
-	height: 120%;
 	color: #ffffff;
 	padding: 30px 10px;
 }
