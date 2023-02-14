@@ -12,9 +12,11 @@ body {
 	background: url("https://images.unsplash.com/photo-1477346611705-65d1883cee1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80");
 	height: 100vh;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	font-family: "Comic Neue", cursive;
+	color: #ffffff;
 	font-size: 19px;
 }
 
@@ -93,4 +95,22 @@ form {
 	flex-direction: column;
 	align-items: center;
 	gap: 5px;
+}
+
+.forecast {
+	color: #ffffff;
+	display: flex;
+	gap: 60px;
+}
+
+p.forecastPara {
+	display: flex;
+	flex-direction: column;
+}
+
+.card.forecastCard {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
 }
