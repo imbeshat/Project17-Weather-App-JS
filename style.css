@@ -108,6 +108,15 @@ form {
 	backdrop-filter: blur(6.3px);
 }
 
+.forecast p {
+	display: flex;
+}
+
+.min-temp {
+	padding-left: 10px;
+	font-size: 14px;
+}
+
 p.forecastPara {
 	display: flex;
 	flex-direction: column;

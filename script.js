@@ -138,6 +138,7 @@ async function setBackgroundImage() {
 
 // Function to get forecast data and display
 function displayForecast() {
+	// for date
 	const date1 = document.querySelector(".date1");
 	const date2 = document.querySelector(".date2");
 	const date3 = document.querySelector(".date3");
@@ -159,6 +160,7 @@ function displayForecast() {
 	date6.innerHTML = forecastData.forecast.forecastday[6].date;
 	date7.innerHTML = forecastData.forecast.forecastday[7].date;
 
+	// for icon image
 	const logoImage1 = document.getElementById("logoImage1");
 	const logoImage2 = document.getElementById("logoImage2");
 	const logoImage3 = document.getElementById("logoImage3");
@@ -174,5 +176,40 @@ function displayForecast() {
 	logoImage5.src = forecastData.forecast.forecastday[5].day.condition.icon;
 	logoImage6.src = forecastData.forecast.forecastday[6].day.condition.icon;
 	logoImage7.src = forecastData.forecast.forecastday[7].day.condition.icon;
+
+	// for max temperature
+	const temprature1 = document.getElementById("temprature1");
+	const temprature2 = document.getElementById("temprature2");
+	const temprature3 = document.getElementById("temprature3");
+	const temprature4 = document.getElementById("temprature4");
+	const temprature5 = document.getElementById("temprature5");
+	const temprature6 = document.getElementById("temprature6");
+	const temprature7 = document.getElementById("temprature7");
+
+	temprature1.innerHTML = forecastData.forecast.forecastday[1].day.maxtemp_c;
+	temprature2.innerHTML = forecastData.forecast.forecastday[2].day.maxtemp_c;
+	temprature3.innerHTML = forecastData.forecast.forecastday[3].day.maxtemp_c;
+	temprature4.innerHTML = forecastData.forecast.forecastday[4].day.maxtemp_c;
+	temprature5.innerHTML = forecastData.forecast.forecastday[5].day.maxtemp_c;
+	temprature6.innerHTML = forecastData.forecast.forecastday[6].day.maxtemp_c;
+	temprature7.innerHTML = forecastData.forecast.forecastday[7].day.maxtemp_c;
+
+	// for min temperature
+	const tempratureMin1 = document.getElementById("temprature-min1");
+	const tempratureMin2 = document.getElementById("temprature-min2");
+	const tempratureMin3 = document.getElementById("temprature-min3");
+	const tempratureMin4 = document.getElementById("temprature-min4");
+	const tempratureMin5 = document.getElementById("temprature-min5");
+	const tempratureMin6 = document.getElementById("temprature-min6");
+	const tempratureMin7 = document.getElementById("temprature-min7");
+
+	tempratureMin1.innerHTML = forecastData.forecast.forecastday[1].day.mintemp_c;
+	tempratureMin2.innerHTML = forecastData.forecast.forecastday[2].day.mintemp_c;
+	tempratureMin3.innerHTML = forecastData.forecast.forecastday[3].day.mintemp_c;
+	tempratureMin4.innerHTML = forecastData.forecast.forecastday[4].day.mintemp_c;
+	tempratureMin5.innerHTML = forecastData.forecast.forecastday[5].day.mintemp_c;
+	tempratureMin6.innerHTML = forecastData.forecast.forecastday[6].day.mintemp_c;
+	tempratureMin7.innerHTML = forecastData.forecast.forecastday[7].day.mintemp_c;
+
 	console.log(date1.innerHTML);
 }
