@@ -138,13 +138,13 @@ async function setBackgroundImage() {
 
 // Function to get forecast data and display
 function displayForecast() {
-	let date1 = document.querySelector(".date1");
-	let date2 = document.querySelector(".date2");
-	let date3 = document.querySelector(".date3");
-	let date4 = document.querySelector(".date4");
-	let date5 = document.querySelector(".date5");
-	let date6 = document.querySelector(".date6");
-	let date7 = document.querySelector(".date7");
+	const date1 = document.querySelector(".date1");
+	const date2 = document.querySelector(".date2");
+	const date3 = document.querySelector(".date3");
+	const date4 = document.querySelector(".date4");
+	const date5 = document.querySelector(".date5");
+	const date6 = document.querySelector(".date6");
+	const date7 = document.querySelector(".date7");
 
 	// date.innerHTML = forecastData.forecast.forecastday[3].date;
 	// date.forEach((e) => {
@@ -158,5 +158,21 @@ function displayForecast() {
 	date5.innerHTML = forecastData.forecast.forecastday[5].date;
 	date6.innerHTML = forecastData.forecast.forecastday[6].date;
 	date7.innerHTML = forecastData.forecast.forecastday[7].date;
+
+	const logoImage1 = document.getElementById("logoImage1");
+	const logoImage2 = document.getElementById("logoImage2");
+	const logoImage3 = document.getElementById("logoImage3");
+	const logoImage4 = document.getElementById("logoImage4");
+	const logoImage5 = document.getElementById("logoImage5");
+	const logoImage6 = document.getElementById("logoImage6");
+	const logoImage7 = document.getElementById("logoImage7");
+
+	logoImage1.src = forecastData.forecast.forecastday[1].day.condition.icon;
+	logoImage2.src = forecastData.forecast.forecastday[2].day.condition.icon;
+	logoImage3.src = forecastData.forecast.forecastday[3].day.condition.icon;
+	logoImage4.src = forecastData.forecast.forecastday[4].day.condition.icon;
+	logoImage5.src = forecastData.forecast.forecastday[5].day.condition.icon;
+	logoImage6.src = forecastData.forecast.forecastday[6].day.condition.icon;
+	logoImage7.src = forecastData.forecast.forecastday[7].day.condition.icon;
 	console.log(date1.innerHTML);
 }
