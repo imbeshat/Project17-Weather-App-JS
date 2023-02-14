@@ -211,5 +211,21 @@ function displayForecast() {
 	tempratureMin6.innerHTML = forecastData.forecast.forecastday[6].day.mintemp_c;
 	tempratureMin7.innerHTML = forecastData.forecast.forecastday[7].day.mintemp_c;
 
+	// for weather condition
+	const weatherStatus1 = document.getElementById("weatherStatus1");
+	const weatherStatus2 = document.getElementById("weatherStatus2");
+	const weatherStatus3 = document.getElementById("weatherStatus3");
+	const weatherStatus4 = document.getElementById("weatherStatus4");
+	const weatherStatus5 = document.getElementById("weatherStatus5");
+	const weatherStatus6 = document.getElementById("weatherStatus6");
+	const weatherStatus7 = document.getElementById("weatherStatus7");
+
+	weatherStatus1.innerHTML = forecastData.forecast.forecastday[1].day.condition.text;
+	weatherStatus2.innerHTML = forecastData.forecast.forecastday[2].day.condition.text;
+	weatherStatus3.innerHTML = forecastData.forecast.forecastday[3].day.condition.text;
+	weatherStatus4.innerHTML = forecastData.forecast.forecastday[4].day.condition.text;
+	weatherStatus5.innerHTML = forecastData.forecast.forecastday[5].day.condition.text;
+	weatherStatus6.innerHTML = forecastData.forecast.forecastday[6].day.condition.text;
+	weatherStatus7.innerHTML = forecastData.forecast.forecastday[7].day.condition.text;
 	console.log(date1.innerHTML);
 }

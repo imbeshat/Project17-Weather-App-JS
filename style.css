@@ -97,11 +97,12 @@ form {
 	gap: 5px;
 }
 
+/* CSS for forecast section */
 .forecast {
 	max-width: 1440px;
 	color: #ffffff;
 	display: flex;
-	column-gap: 60px;
+	column-gap: 40px;
 	flex-wrap: wrap;
 	border-radius: 30px;
 	box-shadow: 0 4px 30px #0000001a;
