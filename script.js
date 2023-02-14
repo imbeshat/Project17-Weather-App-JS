@@ -1,10 +1,10 @@
-// Data => Done
-// Variable to Store the Element => Done
 // Function to get the data from weather app
 // Manipluate the varibe of already created element
 
 let data;
+let forecastData;
 
+// DOM selection for weather details
 const inputBox = document.getElementById("inputBox");
 const countryName = document.getElementById("countryName");
 const stateName = document.getElementById("stateName");
@@ -15,6 +15,8 @@ const temprature = document.getElementById("temprature");
 const logoImage = document.getElementById("logoImage");
 const weatherStatus = document.getElementById("weatherStatus");
 
+//DOM selection for forecast data
+
 const getData = async (event) => {
 	event.preventDefault();
 	if (!inputBox.value) {
@@ -22,24 +24,29 @@ const getData = async (event) => {
 		return;
 	}
 
-	//
 	const city = inputBox.value;
 	const api = "3f74759b39204d82847110059231102";
+
 	// Fetch Details
-
 	const fetchData = await fetch(`http://api.weatherapi.com/v1/current.json?key=${api}&q=${city}`);
-
 	const orgData = await fetchData.json();
 	data = orgData;
-	console.log(data);
+	// console.log(data);
 	displayWeather(data);
 	setBackgroundImage();
 
 	// Displaying the data in HTML
 
-	console.log(weatherStatus.innerHTML);
+	// console.log(weatherStatus.innerHTML);
+	const fetchForecastData = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${api}&q=${city}&days=14`);
+	const forecastFetchedData = await fetchForecastData.json();
+	forecastData = forecastFetchedData;
+
+	console.log(forecastData);
+	displayForecast(forecastData);
 };
 
+// Function to get weather and display
 function displayWeather() {
 	countryName.innerHTML = data.location.country;
 	stateName.innerHTML = data.location.region;
@@ -127,4 +134,29 @@ async function setBackgroundImage() {
 		imageUrl = URL.createObjectURL(await responseDefault.blob());
 	}
 	document.body.style.backgroundImage = `url(${imageUrl})`;
+}
+
+// Function to get forecast data and display
+function displayForecast() {
+	let date1 = document.querySelector(".date1");
+	let date2 = document.querySelector(".date2");
+	let date3 = document.querySelector(".date3");
+	let date4 = document.querySelector(".date4");
+	let date5 = document.querySelector(".date5");
+	let date6 = document.querySelector(".date6");
+	let date7 = document.querySelector(".date7");
+
+	// date.innerHTML = forecastData.forecast.forecastday[3].date;
+	// date.forEach((e) => {
+	// 	e.innerHTML = forecastData.forecast.forecastday[e].date;
+	// });
+
+	date1.innerHTML = forecastData.forecast.forecastday[1].date;
+	date2.innerHTML = forecastData.forecast.forecastday[2].date;
+	date3.innerHTML = forecastData.forecast.forecastday[3].date;
+	date4.innerHTML = forecastData.forecast.forecastday[4].date;
+	date5.innerHTML = forecastData.forecast.forecastday[5].date;
+	date6.innerHTML = forecastData.forecast.forecastday[6].date;
+	date7.innerHTML = forecastData.forecast.forecastday[7].date;
+	console.log(date1.innerHTML);
 }
