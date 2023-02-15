@@ -25,12 +25,12 @@ const getData = async (event) => {
 	const api = "3f74759b39204d82847110059231102";
 
 	// Fetch Weather Details
-	const fetchData = await fetch(`http://api.weatherapi.com/v1/current.json?key=${api}&q=${city}`);
+	const fetchData = await fetch(`https://api.weatherapi.com/v1/current.json?key=${api}&q=${city}`);
 	const orgData = await fetchData.json();
 	data = orgData;
 
 	// Fetch Forecast Details
-	const fetchForecastData = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${api}&q=${city}&days=14`);
+	const fetchForecastData = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${api}&q=${city}&days=14`);
 	const forecastFetchedData = await fetchForecastData.json();
 	forecastData = forecastFetchedData;
 
