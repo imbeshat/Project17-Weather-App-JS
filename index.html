@@ -10,121 +10,154 @@
 		<link rel="stylesheet" href="./style.css" />
 	</head>
 	<body>
-		<!-- container for holding the weather card -->
-		<div class="container">
-			<h1>Weather Web App</h1>
+		<main>
+			<!-- nav bar -->
+			<nav>
+				<h1>Weather App</h1>
 
-			<!-- section for searching the weather of a city -->
-			<form onsubmit="getData(event)" class="searchData">
-				<input id="inputBox" type="text" placeholder="Enter the city name" />
-				<button>
-					<svg stroke="currentColor" fill="currentColor" stroke-width="{0}" viewBox="0 0 24 24" height="1em" width="1em" {...props}>
-						<path
-							d="M10,18c1.846,0,3.543-0.635,4.897-1.688l4.396,4.396l1.414-1.414l-4.396-4.396C17.365,13.543,18,11.846,18,10 c0-4.411-3.589-8-8-8s-8,3.589-8,8S5.589,18,10,18z M10,4c3.309,0,6,2.691,6,6s-2.691,6-6,6s-6-2.691-6-6S6.691,4,10,4z"
-						/>
-					</svg>
-				</button>
-			</form>
+				<!-- section for searching the weather of a city -->
+				<form onsubmit="getData(event)" class="searchData">
+					<input id="inputBox" type="text" placeholder="Enter the city name" />
+					<button>
+						<svg stroke="currentColor" fill="currentColor" stroke-width="{0}" viewBox="0 0 24 24" height="1em" width="1em" {...props}>
+							<path
+								d="M10,18c1.846,0,3.543-0.635,4.897-1.688l4.396,4.396l1.414-1.414l-4.396-4.396C17.365,13.543,18,11.846,18,10 c0-4.411-3.589-8-8-8s-8,3.589-8,8S5.589,18,10,18z M10,4c3.309,0,6,2.691,6,6s-2.691,6-6,6s-6-2.691-6-6S6.691,4,10,4z"
+							/>
+						</svg>
+					</button>
+				</form>
+			</nav>
 
-			<!-- section for displaying the city weather data -->
-			<section class="cityWeatherData">
+			<!-- container for holding the weather card -->
+			<div class="container">
 				<!-- displaying the country details -->
 				<div class="countryDetails details">
-					<!-- displaying the country name -->
-					<div class="card">
-						<p>Country Name</p>
+					<!-- displaying the country name, cit and state -->
+					<div class="card city-card city-state">
+						<p id="cityName">__</p>
+						<p id="stateName">__</p>
+					</div>
+					<div class="card city-card">
 						<p id="countryName">__</p>
 					</div>
 
-					<!-- displaying the state name -->
-					<div class="card">
-						<p>State Name</p>
-						<p id="stateName">__</p>
-					</div>
-
-					<!-- displaying the city name -->
-					<div class="card">
-						<p>City Name</p>
-						<p id="cityName">__</p>
-					</div>
-				</div>
-
-				<!-- displaying the weather status -->
-				<div class="weatherDetails details">
-					<!-- displaying the humidity -->
-					<div class="card">
-						<p>Humidity</p>
-						<p id="humidity">__</p>
-					</div>
-
-					<!-- displaying the wind speed -->
-					<div class="card">
-						<p>Wind Speed</p>
-						<p><span id="windSpeed">__</span> KMPH</p>
-					</div>
-
-					<!-- displaying the current temprature in celcius -->
-					<div class="card">
-						<p>Temprature</p>
-						<!-- unicode for degree celcius symbol -->
-						<p><span id="temprature">__</span>&#8451;</p>
+					<!-- displaying the logo and temperature -->
+					<div class="card temp-card">
+						<img width="90px" id="logoImage" src="http://cdn.weatherapi.com/weather/128x128/night/143.png" alt="icon" />
+						<p>
+							<span id="temprature">__</span>
+							<sup class="main-sup">°C</sup>
+						</p>
 					</div>
 
 					<!-- displaying the weather condition -->
-					<div class="card">
-						<img width="20px" id="logoImage" src="http://cdn.weatherapi.com/weather/64x64/night/143.png" alt="icon" />
+					<div class="card condition-card">
 						<p id="weatherStatus">__</p>
 					</div>
-				</div>
-			</section>
-		</div>
-		<div>
-			<h1>Daily</h1>
-			<div class="forecast">
-				<div class="card forecastCard">
-					<span class="date1">__</span>
-					<img width="30px" id="logoImage1" src="http://cdn.weatherapi.com/weather/64x64/night/143.png" alt="icon" />
-					<p><span id="temprature1">__</span><sup>°</sup> <span id="temprature-min1" class="min-temp">__</span><sup>°</sup></p>
-					<span id="weatherStatus1">__</span>
-				</div>
-				<div class="card forecastCard">
-					<span class="date2">__</span>
-					<img width="30px" id="logoImage2" src="http://cdn.weatherapi.com/weather/64x64/night/143.png" alt="icon" />
-					<p><span id="temprature2">__</span><sup>°</sup> <span id="temprature-min2" class="min-temp">__</span><sup>°</sup></p>
-					<span id="weatherStatus2">__</span>
-				</div>
-				<div class="card forecastCard">
-					<span class="date3">__</span>
-					<img width="30px" id="logoImage3" src="http://cdn.weatherapi.com/weather/64x64/night/143.png" alt="icon" />
-					<p><span id="temprature3">__</span><sup>°</sup> <span id="temprature-min3" class="min-temp">__</span><sup>°</sup></p>
-					<span id="weatherStatus3">__</span>
-				</div>
-				<div class="card forecastCard">
-					<span class="date4">__</span>
-					<img width="30px" id="logoImage4" src="http://cdn.weatherapi.com/weather/64x64/night/143.png" alt="icon" />
-					<p><span id="temprature4">__</span><sup>°</sup> <span id="temprature-min4" class="min-temp">__</span><sup>°</sup></p>
-					<span id="weatherStatus4">__</span>
-				</div>
-				<div class="card forecastCard">
-					<span class="date5">__</span>
-					<img width="30px" id="logoImage5" src="http://cdn.weatherapi.com/weather/64x64/night/143.png" alt="icon" />
-					<p><span id="temprature5">__</span><sup>°</sup> <span id="temprature-min5" class="min-temp">__</span><sup>°</sup></p>
-					<span id="weatherStatus5">__</span>
-				</div>
-				<div class="card forecastCard">
-					<span class="date6">__</span>
-					<img width="30px" id="logoImage6" src="http://cdn.weatherapi.com/weather/64x64/night/143.png" alt="icon" />
-					<p><span id="temprature6">__</span><sup>°</sup> <span id="temprature-min6" class="min-temp">__</span><sup>°</sup></p>
-					<span id="weatherStatus6">__</span>
-				</div>
-				<div class="card forecastCard">
-					<span class="date7">__</span>
-					<img width="30px" id="logoImage7" src="http://cdn.weatherapi.com/weather/64x64/night/143.png" alt="icon" />
-					<p><span id="temprature7">__</span><sup>°</sup> <span id="temprature-min7" class="min-temp">__</span><sup>°</sup></p>
-					<span id="weatherStatus7">__</span>
+
+					<!-- div for displaying wind speed, direction and humidity -->
+					<div class="card wind-card">
+						<!-- displaying feels like -->
+						<div class="wind-humid">
+							<p>Feels Like</p>
+							<p class="sec-sup">
+								<span id="feelsLike">__</span>
+								<sup> °</sup>
+							</p>
+						</div>
+
+						<!-- displaying humidity -->
+						<div class="wind-humid">
+							<p>Humidity</p>
+							<p><span id="humidity">__</span> %</p>
+						</div>
+
+						<!-- displaying wind speed and direction -->
+						<div class="wind-humid">
+							<p>Wind</p>
+							<p>
+								<span id="windSpeed">__</span> km/h
+								<span
+									id="windDir"
+									style="
+										background-color: #34925b;
+										padding: 2px 2px;
+										border-radius: 3px;
+										box-shadow: 0 4px 30px #34925b89;
+										backdrop-filter: blur(8.3px);
+									"
+									>__</span
+								>
+							</p>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
+
+			<!-- div for daily forecast -->
+			<div>
+				<h1 class="daily-h1">Daily Forecast</h1>
+
+				<!-- container for forecast -->
+				<div class="forecast">
+					<!-- card for day 1 forecast -->
+					<div class="card forecastCard">
+						<span class="date1">__</span>
+						<img width="30px" id="logoImage1" src="http://cdn.weatherapi.com/weather/64x64/night/143.png" alt="icon" />
+						<p><span id="temprature1">__</span><sup>°</sup> <span id="temprature-min1" class="min-temp">__</span><sup>°</sup></p>
+						<span id="weatherStatus1">__</span>
+					</div>
+
+					<!-- card for day 2 forecast -->
+					<div class="card forecastCard">
+						<span class="date2">__</span>
+						<img width="30px" id="logoImage2" src="http://cdn.weatherapi.com/weather/64x64/night/143.png" alt="icon" />
+						<p><span id="temprature2">__</span><sup>°</sup> <span id="temprature-min2" class="min-temp">__</span><sup>°</sup></p>
+						<span id="weatherStatus2">__</span>
+					</div>
+
+					<!-- card for day 3 forecast -->
+					<div class="card forecastCard">
+						<span class="date3">__</span>
+						<img width="30px" id="logoImage3" src="http://cdn.weatherapi.com/weather/64x64/night/143.png" alt="icon" />
+						<p><span id="temprature3">__</span><sup>°</sup> <span id="temprature-min3" class="min-temp">__</span><sup>°</sup></p>
+						<span id="weatherStatus3">__</span>
+					</div>
+
+					<!-- card for day 4 forecast -->
+					<div class="card forecastCard">
+						<span class="date4">__</span>
+						<img width="30px" id="logoImage4" src="http://cdn.weatherapi.com/weather/64x64/night/143.png" alt="icon" />
+						<p><span id="temprature4">__</span><sup>°</sup> <span id="temprature-min4" class="min-temp">__</span><sup>°</sup></p>
+						<span id="weatherStatus4">__</span>
+					</div>
+
+					<!-- card for day 5 forecast -->
+					<div class="card forecastCard">
+						<span class="date5">__</span>
+						<img width="30px" id="logoImage5" src="http://cdn.weatherapi.com/weather/64x64/night/143.png" alt="icon" />
+						<p><span id="temprature5">__</span><sup>°</sup> <span id="temprature-min5" class="min-temp">__</span><sup>°</sup></p>
+						<span id="weatherStatus5">__</span>
+					</div>
+
+					<!-- card for day 6 forecast -->
+					<div class="card forecastCard">
+						<span class="date6">__</span>
+						<img width="30px" id="logoImage6" src="http://cdn.weatherapi.com/weather/64x64/night/143.png" alt="icon" />
+						<p><span id="temprature6">__</span><sup>°</sup> <span id="temprature-min6" class="min-temp">__</span><sup>°</sup></p>
+						<span id="weatherStatus6">__</span>
+					</div>
+
+					<!-- card for day 7 forecast -->
+					<div class="card forecastCard">
+						<span class="date7">__</span>
+						<img width="30px" id="logoImage7" src="http://cdn.weatherapi.com/weather/64x64/night/143.png" alt="icon" />
+						<p><span id="temprature7">__</span><sup>°</sup> <span id="temprature-min7" class="min-temp">__</span><sup>°</sup></p>
+						<span id="weatherStatus7">__</span>
+					</div>
+				</div>
+			</div>
+		</main>
 	</body>
 
 	<!-- adding the javascript file -->

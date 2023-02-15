@@ -10,18 +10,27 @@
 
 body {
 	background: url("https://images.unsplash.com/photo-1477346611705-65d1883cee1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80");
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
 	font-family: "Comic Neue", cursive;
 	color: #ffffff;
 	font-size: 19px;
 }
 
+/* css for nav bar */
+nav {
+	max-width: 1440px;
+	margin: 20px auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+nav h1 {
+	font-size: 35px;
+}
+
+/* css for search */
 form {
-	width: 100%;
+	width: 30%;
 	display: flex;
 	justify-content: space-between;
 	padding: 0 10px;
@@ -32,8 +41,8 @@ form {
 	color: #ffffff;
 	border-radius: 30px;
 	width: 100%;
-	max-width: 480px;
-	margin: 10px;
+	max-width: 640px;
+	margin: 60px auto 0 auto;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -50,10 +59,10 @@ form {
 	padding: 8px 10px;
 	border-radius: 19px;
 	border: none;
-	background: #7c7c7c2b;
+	background: #ffffffd5;
 	font-size: 20px;
 	font-family: inherit;
-	color: #ffffff;
+	color: #000000d5;
 }
 
 .searchData button {
@@ -62,8 +71,8 @@ form {
 	border-radius: 50%;
 	height: 40px;
 	width: 40px;
-	background: #7c7c7c2b;
-	color: #ffffff;
+	background: #ffffffd5;
+	color: #000000d5;
 	transition: 0.5s ease-in-out;
 }
 
@@ -75,38 +84,80 @@ form {
 	transform: translateY(4px);
 	transition: 0.1s ease-in-out;
 }
-/* designing the city weather data */
-.cityWeatherData {
-	display: flex;
-	flex-direction: column;
-	gap: 30px;
-	align-items: center;
-	width: 100%;
-}
 
+/* css for weather details */
 .details {
 	display: flex;
-	align-items: center;
-	gap: 30px;
-}
-
-.card {
-	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+
+/* css for each weather details card */
+.card {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 	gap: 5px;
+}
+
+.city-card {
+	font-size: 35px;
+}
+
+.temp-card {
+	font-size: 80px;
+	margin: 10px 0 0 0;
+}
+
+.temp-card p {
+	display: flex;
+	gap: 6px;
+}
+
+.main-sup {
+	font-size: 30px;
+	margin-top: 8px;
+}
+
+.condition-card {
+	font-size: 33px;
+	margin-bottom: 20px;
+}
+
+.wind-card {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	column-gap: 30px;
+}
+
+.wind-humid {
+	display: flex;
+	column-gap: 5px;
+}
+
+.sec-sup {
+	display: flex;
 }
 
 /* CSS for forecast section */
 .forecast {
 	max-width: 1440px;
+	width: auto;
+	margin: 5px auto;
 	color: #ffffff;
 	display: flex;
-	column-gap: 40px;
-	/* flex-wrap: wrap; */
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
 	border-radius: 30px;
 	box-shadow: 0 4px 30px #0000001a;
 	backdrop-filter: blur(6.3px);
+}
+
+.daily-h1 {
+	margin: 60px auto 0 auto;
+	max-width: 1440px;
 }
 
 .forecast p {
@@ -131,4 +182,40 @@ p.forecastPara {
 	max-width: 200px;
 	color: #ffffff;
 	padding: 30px 10px;
+}
+
+/* media queries */
+@media screen and (max-width: 768px) and (min-width: 572px) {
+	nav {
+		display: flex;
+		flex-direction: column;
+	}
+	nav h1 {
+		margin-bottom: 10px;
+	}
+	form {
+		width: 50%;
+		padding: 0 10px;
+	}
+}
+
+@media screen and (max-width: 571px) {
+	nav {
+		display: flex;
+		flex-direction: column;
+	}
+	nav h1 {
+		margin-bottom: 10px;
+	}
+	form {
+		width: 70%;
+		padding: 0 10px;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	.city-state {
+		display: flex;
+		flex-direction: column;
+	}
 }
