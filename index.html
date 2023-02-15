@@ -14,7 +14,6 @@
 			<!-- nav bar -->
 			<nav>
 				<h1>Weather Web App</h1>
-
 				<!-- section for searching the weather of a city -->
 				<form onsubmit="getData(event)" class="searchData">
 					<input id="inputBox" type="text" placeholder="Enter the city name" />
@@ -36,12 +35,12 @@
 					<div class="countryDetails details">
 						<!-- displaying the country name -->
 						<div class="card city-card">
-							<p id="cityName">City__</p>
+							<p id="cityName">__</p>
 							,
-							<p id="stateName">State__</p>
+							<p id="stateName">__</p>
 						</div>
 						<div class="card city-card">
-							<p id="countryName">Country__</p>
+							<p id="countryName">__</p>
 						</div>
 
 						<!-- displaying the weather condition -->
@@ -54,7 +53,7 @@
 						</div>
 						<!-- displaying the current temprature in celcius -->
 						<div class="card condition-card">
-							<p id="weatherStatus">Weather Con__</p>
+							<p id="weatherStatus">__</p>
 							<!-- unicode for degree celcius symbol -->
 						</div>
 
@@ -74,7 +73,17 @@
 								<p>Wind</p>
 								<p>
 									<span id="windSpeed">__</span> km/h
-									<span id="windDir" style="background-color: #34925b; padding: 2px 2px; border-radius: 3px">__</span>
+									<span
+										id="windDir"
+										style="
+											background-color: #34925b;
+											padding: 2px 2px;
+											border-radius: 3px;
+											box-shadow: 0 4px 30px #34925b89;
+											backdrop-filter: blur(8.3px);
+										"
+										>__</span
+									>
 								</p>
 							</div>
 						</div>
@@ -82,7 +91,7 @@
 				</section>
 			</div>
 			<div>
-				<h1 class="daily-h1">Daily</h1>
+				<h1 class="daily-h1">Daily Forecast</h1>
 				<div class="forecast">
 					<div class="card forecastCard">
 						<span class="date1">__</span>
