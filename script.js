@@ -14,6 +14,8 @@ const windSpeed = document.getElementById("windSpeed");
 const temprature = document.getElementById("temprature");
 const logoImage = document.getElementById("logoImage");
 const weatherStatus = document.getElementById("weatherStatus");
+const feelsLike = document.getElementById("feelsLike");
+const windDir = document.getElementById("windDir");
 
 //DOM selection for forecast data
 
@@ -56,6 +58,8 @@ function displayWeather() {
 	temprature.innerHTML = data.current.temp_c;
 	logoImage.src = data.current.condition.icon;
 	weatherStatus.innerHTML = data.current.condition.text;
+	feelsLike.innerHTML = data.current.feelslike_c;
+	windDir.innerHTML = data.current.wind_dir;
 }
 
 async function setBackgroundImage() {

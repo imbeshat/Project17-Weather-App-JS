@@ -143,6 +143,10 @@ form {
 	display: flex;
 	column-gap: 5px;
 }
+
+.sec-sup {
+	display: flex;
+}
 /* CSS for forecast section */
 .forecast {
 	max-width: 1440px;
