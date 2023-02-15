@@ -220,5 +220,4 @@ function displayForecast() {
 	weatherStatus5.innerHTML = forecastData.forecast.forecastday[5].day.condition.text;
 	weatherStatus6.innerHTML = forecastData.forecast.forecastday[6].day.condition.text;
 	weatherStatus7.innerHTML = forecastData.forecast.forecastday[7].day.condition.text;
-	console.log(date1.innerHTML);
 }
