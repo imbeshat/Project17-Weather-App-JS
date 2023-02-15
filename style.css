@@ -10,17 +10,12 @@
 
 body {
 	background: url("https://images.unsplash.com/photo-1477346611705-65d1883cee1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80");
-	/* height: 100vh; */
-	/* display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center; */
 	font-family: "Comic Neue", cursive;
 	color: #ffffff;
 	font-size: 19px;
-	/* overflow: hidden; */
 }
 
+/* css for nav bar */
 nav {
 	max-width: 1440px;
 	margin: 20px auto;
@@ -33,6 +28,7 @@ nav h1 {
 	font-size: 35px;
 }
 
+/* css for search */
 form {
 	width: 30%;
 	display: flex;
@@ -88,21 +84,15 @@ form {
 	transform: translateY(4px);
 	transition: 0.1s ease-in-out;
 }
-/* designing the city weather data */
-.cityWeatherData {
-	display: flex;
-	flex-direction: column;
-	gap: 30px;
-	align-items: center;
-	width: 100%;
-}
 
+/* css for weather details */
 .details {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
+/* css for each weather details card */
 .card {
 	display: flex;
 	flex-direction: row;
@@ -149,6 +139,7 @@ form {
 .sec-sup {
 	display: flex;
 }
+
 /* CSS for forecast section */
 .forecast {
 	max-width: 1440px;
@@ -193,7 +184,8 @@ p.forecastPara {
 	padding: 30px 10px;
 }
 
-@media screen and (max-width: 768px) and (min-width: 481px) {
+/* media queries */
+@media screen and (max-width: 768px) and (min-width: 572px) {
 	nav {
 		display: flex;
 		flex-direction: column;
@@ -218,5 +210,12 @@ p.forecastPara {
 	form {
 		width: 70%;
 		padding: 0 10px;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	.city-state {
+		display: flex;
+		flex-direction: column;
 	}
 }

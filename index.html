@@ -13,7 +13,8 @@
 		<main>
 			<!-- nav bar -->
 			<nav>
-				<h1>Weather Web App</h1>
+				<h1>Weather App</h1>
+
 				<!-- section for searching the weather of a city -->
 				<form onsubmit="getData(event)" class="searchData">
 					<input id="inputBox" type="text" placeholder="Enter the city name" />
@@ -29,106 +30,125 @@
 
 			<!-- container for holding the weather card -->
 			<div class="container">
-				<!-- section for displaying the city weather data -->
-				<section class="cityWeatherData">
-					<!-- displaying the country details -->
-					<div class="countryDetails details">
-						<!-- displaying the country name -->
-						<div class="card city-card">
-							<p id="cityName">__</p>
-							,
-							<p id="stateName">__</p>
-						</div>
-						<div class="card city-card">
-							<p id="countryName">__</p>
-						</div>
+				<!-- displaying the country details -->
+				<div class="countryDetails details">
+					<!-- displaying the country name, cit and state -->
+					<div class="card city-card city-state">
+						<p id="cityName">__</p>
+						<p id="stateName">__</p>
+					</div>
+					<div class="card city-card">
+						<p id="countryName">__</p>
+					</div>
 
-						<!-- displaying the weather condition -->
-						<div class="card temp-card">
-							<img width="90px" id="logoImage" src="http://cdn.weatherapi.com/weather/128x128/night/143.png" alt="icon" />
-							<p>
-								<span id="temprature">__</span>
-								<sup class="main-sup">°C</sup>
+					<!-- displaying the logo and temperature -->
+					<div class="card temp-card">
+						<img width="90px" id="logoImage" src="http://cdn.weatherapi.com/weather/128x128/night/143.png" alt="icon" />
+						<p>
+							<span id="temprature">__</span>
+							<sup class="main-sup">°C</sup>
+						</p>
+					</div>
+
+					<!-- displaying the weather condition -->
+					<div class="card condition-card">
+						<p id="weatherStatus">__</p>
+					</div>
+
+					<!-- div for displaying wind speed, direction and humidity -->
+					<div class="card wind-card">
+						<!-- displaying feels like -->
+						<div class="wind-humid">
+							<p>Feels Like</p>
+							<p class="sec-sup">
+								<span id="feelsLike">__</span>
+								<sup> °</sup>
 							</p>
 						</div>
-						<!-- displaying the current temprature in celcius -->
-						<div class="card condition-card">
-							<p id="weatherStatus">__</p>
-							<!-- unicode for degree celcius symbol -->
+
+						<!-- displaying humidity -->
+						<div class="wind-humid">
+							<p>Humidity</p>
+							<p><span id="humidity">__</span> %</p>
 						</div>
 
-						<div class="card wind-card">
-							<div class="wind-humid">
-								<p>Feels Like</p>
-								<p class="sec-sup">
-									<span id="feelsLike">__</span>
-									<sup> °</sup>
-								</p>
-							</div>
-							<div class="wind-humid">
-								<p>Humidity</p>
-								<p><span id="humidity">__</span> %</p>
-							</div>
-							<div class="wind-humid">
-								<p>Wind</p>
-								<p>
-									<span id="windSpeed">__</span> km/h
-									<span
-										id="windDir"
-										style="
-											background-color: #34925b;
-											padding: 2px 2px;
-											border-radius: 3px;
-											box-shadow: 0 4px 30px #34925b89;
-											backdrop-filter: blur(8.3px);
-										"
-										>__</span
-									>
-								</p>
-							</div>
+						<!-- displaying wind speed and direction -->
+						<div class="wind-humid">
+							<p>Wind</p>
+							<p>
+								<span id="windSpeed">__</span> km/h
+								<span
+									id="windDir"
+									style="
+										background-color: #34925b;
+										padding: 2px 2px;
+										border-radius: 3px;
+										box-shadow: 0 4px 30px #34925b89;
+										backdrop-filter: blur(8.3px);
+									"
+									>__</span
+								>
+							</p>
 						</div>
 					</div>
-				</section>
+				</div>
 			</div>
+
+			<!-- div for daily forecast -->
 			<div>
 				<h1 class="daily-h1">Daily Forecast</h1>
+
+				<!-- container for forecast -->
 				<div class="forecast">
+					<!-- card for day 1 forecast -->
 					<div class="card forecastCard">
 						<span class="date1">__</span>
 						<img width="30px" id="logoImage1" src="http://cdn.weatherapi.com/weather/64x64/night/143.png" alt="icon" />
 						<p><span id="temprature1">__</span><sup>°</sup> <span id="temprature-min1" class="min-temp">__</span><sup>°</sup></p>
 						<span id="weatherStatus1">__</span>
 					</div>
+
+					<!-- card for day 2 forecast -->
 					<div class="card forecastCard">
 						<span class="date2">__</span>
 						<img width="30px" id="logoImage2" src="http://cdn.weatherapi.com/weather/64x64/night/143.png" alt="icon" />
 						<p><span id="temprature2">__</span><sup>°</sup> <span id="temprature-min2" class="min-temp">__</span><sup>°</sup></p>
 						<span id="weatherStatus2">__</span>
 					</div>
+
+					<!-- card for day 3 forecast -->
 					<div class="card forecastCard">
 						<span class="date3">__</span>
 						<img width="30px" id="logoImage3" src="http://cdn.weatherapi.com/weather/64x64/night/143.png" alt="icon" />
 						<p><span id="temprature3">__</span><sup>°</sup> <span id="temprature-min3" class="min-temp">__</span><sup>°</sup></p>
 						<span id="weatherStatus3">__</span>
 					</div>
+
+					<!-- card for day 4 forecast -->
 					<div class="card forecastCard">
 						<span class="date4">__</span>
 						<img width="30px" id="logoImage4" src="http://cdn.weatherapi.com/weather/64x64/night/143.png" alt="icon" />
 						<p><span id="temprature4">__</span><sup>°</sup> <span id="temprature-min4" class="min-temp">__</span><sup>°</sup></p>
 						<span id="weatherStatus4">__</span>
 					</div>
+
+					<!-- card for day 5 forecast -->
 					<div class="card forecastCard">
 						<span class="date5">__</span>
 						<img width="30px" id="logoImage5" src="http://cdn.weatherapi.com/weather/64x64/night/143.png" alt="icon" />
 						<p><span id="temprature5">__</span><sup>°</sup> <span id="temprature-min5" class="min-temp">__</span><sup>°</sup></p>
 						<span id="weatherStatus5">__</span>
 					</div>
+
+					<!-- card for day 6 forecast -->
 					<div class="card forecastCard">
 						<span class="date6">__</span>
 						<img width="30px" id="logoImage6" src="http://cdn.weatherapi.com/weather/64x64/night/143.png" alt="icon" />
 						<p><span id="temprature6">__</span><sup>°</sup> <span id="temprature-min6" class="min-temp">__</span><sup>°</sup></p>
 						<span id="weatherStatus6">__</span>
 					</div>
+
+					<!-- card for day 7 forecast -->
 					<div class="card forecastCard">
 						<span class="date7">__</span>
 						<img width="30px" id="logoImage7" src="http://cdn.weatherapi.com/weather/64x64/night/143.png" alt="icon" />
