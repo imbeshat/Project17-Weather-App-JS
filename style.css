@@ -211,11 +211,17 @@ p.forecastPara {
 		width: 70%;
 		padding: 0 10px;
 	}
+	.daily-h1 {
+		text-align: center;
+	}
 }
 
 @media screen and (max-width: 450px) {
 	.city-state {
 		display: flex;
 		flex-direction: column;
+	}
+	.daily-h1 {
+		text-align: center;
 	}
 }
