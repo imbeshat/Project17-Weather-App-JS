@@ -57,7 +57,6 @@ function displayWeather() {
 // function to get dynamic background image
 async function setBackgroundImage() {
 	const lowercaseCondition = data.current.condition.text.toLowerCase();
-	console.log(lowercaseCondition);
 	const responseMist = await fetch(
 		"https://images.unsplash.com/photo-1543968996-ee822b8176ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80"
 	);
@@ -106,7 +105,7 @@ async function setBackgroundImage() {
 	} else if (lowercaseCondition.includes("clear")) {
 		imageUrl = URL.createObjectURL(await responseClear.blob());
 	} else if (lowercaseCondition.includes("sunny")) {
-		imageUrl = URL.createObjectURL(await responseClear.blob());
+		imageUrl = URL.createObjectURL(await responseSunny.blob());
 	} else if (lowercaseCondition.includes("overcast")) {
 		imageUrl = URL.createObjectURL(await responseOvercast.blob());
 	} else if (lowercaseCondition.includes("cloudy")) {
